@@ -265,7 +265,6 @@ const USER_PERFORMANCE = [
 export const getUserInfosMock = async (id) => {
   try {
     const res = USER_MAIN_DATA.find((el) => el.id === parseInt(id));
-    console.log(USER_MAIN_DATA, id);
     return { data: res };
   } catch (e) {
     console.log(e);

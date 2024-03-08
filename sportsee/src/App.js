@@ -4,16 +4,20 @@ import NavHeader from "./components/NavHeader";
 import NavLeft from "./components/NavLeft";
 import Dashboard from "./pages/Dashboard";
 import User from "./pages/User";
+import Error from "./pages/Error";
 
 function App() {
   return (
     <BrowserRouter>
       <NavHeader />
-      <NavLeft />
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/user/:id" element={<User />} />
-      </Routes>
+      <div className="app-content">
+        <NavLeft />
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/user/:id" element={<User />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 }

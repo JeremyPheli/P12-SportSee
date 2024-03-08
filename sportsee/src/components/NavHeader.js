@@ -1,15 +1,15 @@
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import logo from "../assets/logo.png";
 import "../styles/nav-h.css";
 
 const NavHeader = () => {
-  const { id } = useParams();
-
   return (
     <div className="nav-h">
-      <img className="logo" src={logo} alt="SportSee Logo" />
+      <NavLink to={"/"}>
+        <img src={logo} className="logo" alt="SportSee Logo" />
+      </NavLink>
       <nav>
-        <NavLink to={"/"}>
+        <NavLink to={"/"} style={{ color: "white", textDecoration: "none" }}>
           <span>Acceuil</span>
         </NavLink>
         <span>Profils</span>
