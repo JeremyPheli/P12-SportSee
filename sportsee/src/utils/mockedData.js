@@ -275,7 +275,7 @@ export const getUserInfosMock = async (id) => {
 
 export const getUserActivityMock = async (id) => {
   try {
-    const res = USER_ACTIVITY.find((el) => el.id === parseInt(id));
+    const res = USER_ACTIVITY.find((el) => el.userId === parseInt(id));
     return { data: res };
   } catch (e) {
     console.log(e);
@@ -286,7 +286,7 @@ export const getUserActivityMock = async (id) => {
 
 export const getUserAvgSessionMock = async (id) => {
   try {
-    const res = USER_AVERAGE_SESSIONS.find((el) => el.id === parseInt(id));
+    const res = USER_AVERAGE_SESSIONS.find((el) => el.userId === parseInt(id));
     return { data: res };
   } catch (e) {
     console.log(e);
@@ -297,7 +297,7 @@ export const getUserAvgSessionMock = async (id) => {
 
 export const getUserPerformanceMock = async (id) => {
   try {
-    const res = USER_PERFORMANCE.find((el) => el.id === parseInt(id));
+    const res = USER_PERFORMANCE.find((el) => el.userId === parseInt(id));
     return { data: res };
   } catch (e) {
     console.log(e);

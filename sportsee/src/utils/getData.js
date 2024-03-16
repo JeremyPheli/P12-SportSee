@@ -28,7 +28,6 @@ export const getData = async (type, id) => {
         break;
       case "USER_MAIN_DATA":
         data = await getUserInfosMock(id);
-        console.log("main data");
         break;
       default:
         console.log("Error type");
