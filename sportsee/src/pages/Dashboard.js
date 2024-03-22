@@ -1,13 +1,20 @@
 import { NavLink } from "react-router-dom";
+import "../styles/dashboard.css";
 
 const Dashboard = () => {
   return (
-    <div style={{ display: "flex", gap: "50px" }}>
-      <NavLink to={"user/12"}>
-        <div>KARL</div>
+    <div className="dashboard">
+      <NavLink
+        to={"user/12"}
+        style={{ color: "white", textDecoration: "none" }}
+      >
+        <div className="name-1">KARL</div>
       </NavLink>
-      <NavLink to={"user/18"}>
-        <div>CECILIA</div>
+      <NavLink
+        to={"user/18"}
+        style={{ color: "white", textDecoration: "none" }}
+      >
+        <div className="name-2">CECILIA</div>
       </NavLink>
     </div>
   );

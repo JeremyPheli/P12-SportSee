@@ -1,11 +1,9 @@
 .wrapper {
     margin-bottom: 2em;
-    height: 320px;
-    width: 830px;
     border-radius: 6px;
+    width: 1000px;
     background-color: #FBFBFB;
     padding: 25px;
-    margin-top: 40px;
 }
 
 .head {

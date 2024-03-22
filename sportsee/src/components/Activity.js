@@ -10,7 +10,7 @@ import {
   YAxis,
 } from "recharts";
 import { getData } from "../utils/getData";
-import "../styles/barChart.css";
+import "../styles/activity.css";
 
 const ActivityToolType = ({ active, payload }) => {
   if (active) {
@@ -24,7 +24,7 @@ const ActivityToolType = ({ active, payload }) => {
   return null;
 };
 
-const BarCharts = () => {
+const Activity = () => {
   const [data, setData] = useState([]);
   const { id } = useParams();
 
@@ -109,4 +109,4 @@ const BarCharts = () => {
   );
 };
 
-export default BarCharts;
+export default Activity;
