@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import { getData } from "../utils/getData";
 import "../styles/user.css";
 import Error from "./Error";
@@ -15,19 +15,25 @@ import fat from "../assets/fat-icon.png";
 
 const User = () => {
   const { id } = useParams();
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const data = async () => {
+    const dataFunk = async () => {
       const request = await getData("USER_MAIN_DATA", id);
       if (!request) return alert("data error");
       setData(request.data);
+      setLoading(false);
     };
-    data();
+    dataFunk();
   }, [id]);
 
+  if (loading) {
+    return <p>Chargement en cours...</p>;
+  }
+
   if (!data) {
-    return <Error />;
+    return <Navigate to="/error"></Navigate>;
   }
 
   return (

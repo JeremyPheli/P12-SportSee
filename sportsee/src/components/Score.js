@@ -4,8 +4,8 @@ import "../styles/score.css";
 
 const Score = ({ data }) => {
   const score = [
-    { value: data.todayScore || data.score },
-    { value: 1 - data.todayScore || 1 - data.score },
+    { value: data.todayScore ? data.todayScore : data.score },
+    { value: data.todayScore ? 1 - data.todayScore : 1 - data.score },
   ];
   const COLORS = ["#ff0000", "#FBFBFB"];
 
@@ -19,6 +19,7 @@ const Score = ({ data }) => {
             innerRadius={70}
             outerRadius={80}
             startAngle={90}
+            endAngle={450}
             fill="#8884d8"
             dataKey="value"
           >
